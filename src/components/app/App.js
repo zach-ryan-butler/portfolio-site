@@ -1,22 +1,23 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import styles from './app.css';
 import Header from '../header/Header';
-import Home from '../home/Home';
-import About from '../about/About';
-import Projects from '../projects/Projects';
-import Resume from '../resume/Resume';
-import Contact from '../contact/Contact';
+import Container from '../container/Container';
 
 export default function App() {
   return (
     <div className={styles.root}>
-      <Header />
-      <Home />
-      <About />
-      <Projects />
-      <Resume />
-      <Contact />
+      <Router>
+        <Header />
+        <Switch>
+          <Route path='/' component={Container} />
+          <Route path='/about' component={Container} />
+          <Route path='/projects' component={Container} />
+          <Route path='/resume' component={Container} />
+          <Route path='/contact' component={Container} />
+        </Switch>
+      </Router>
     </div>
   );
 }

@@ -3,5 +3,5 @@ import React from 'react';
 import styles from './projects.css';
 
 export default function Projects() {
-  return <div className={styles.root}></div>;
+  return <section id='section-projects' className={styles.root}></section>;
 }
