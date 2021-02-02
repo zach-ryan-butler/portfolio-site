@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Drawer, List, ListItem, IconButton } from '@material-ui/core';
+import { Drawer, List, IconButton } from '@material-ui/core';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 
 import AppLink from '../appLink/AppLink';
@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TemporaryDrawer() {
+export default function AppDrawer() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 

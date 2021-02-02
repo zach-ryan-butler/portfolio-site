@@ -3,7 +3,7 @@ import { AppBar, Toolbar, IconButton } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
-import Drawer from '../drawer/Drawer';
+import AppDrawer from '../drawer/Drawer';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 import AppLink from '../appLink/AppLink';
@@ -99,7 +99,7 @@ export default function Header({ setLight, light }) {
         </>
       ) : (
         <div className={classes.drawerContainer}>
-          <Drawer />
+          <AppDrawer />
         </div>
       )}
     </AppBar>
