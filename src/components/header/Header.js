@@ -5,21 +5,23 @@ import Brightness7Icon from '@material-ui/icons/Brightness7';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import AppDrawer from '../drawer/Drawer';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import PropTypes from 'prop-types';
 
 import AppLink from '../appLink/AppLink';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
       boxShadow: 'none',
       paddingLeft: '20px',
       paddingRight: '20px',
-      height: '56px',
+      height: '10%',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
+      height: '10%',
       boxShadow: 'none',
       paddingLeft: '20px',
     },
@@ -27,32 +29,26 @@ const useStyles = makeStyles(theme => ({
   drawerContainer: {
     display: 'flex',
     alignItems: 'center',
-    height: '56px',
+    height: '100%',
   },
   toolbar: {
-    width: '40vw',
+    width: '50vw',
     justifyContent: 'space-between',
   },
-  link: {
-    color: 'default',
-    fontFamily: 'Arial',
-    fontSize: '.6em',
-    letterSpacing: '.2em',
-    textTransform: 'uppercase',
-    '&:hover': {
-      textDecoration: 'none',
-    },
+  icon: {
+    width: '30px',
+    height: '30px',
   },
   iconButton: {
-    width: '25px',
-    height: '25px',
+    width: '50px',
+    height: '50px',
   },
 }));
 
-export default function Header({ setLight, light }) {
+function Header({ setLight, light }) {
   const classes = useStyles();
   const theme = useTheme();
-  const showSmUp = useMediaQuery(theme.breakpoints.up('sm'));
+  const showMdUp = useMediaQuery(theme.breakpoints.up('md'));
 
   const [isTransparent, setTransparent] = useState('transparent');
 
@@ -70,7 +66,7 @@ export default function Header({ setLight, light }) {
 
   return (
     <AppBar color={isTransparent} className={classes.root}>
-      {showSmUp ? (
+      {showMdUp ? (
         <>
           <div />
           <Toolbar className={classes.toolbar}>
@@ -86,22 +82,33 @@ export default function Header({ setLight, light }) {
               className={classes.iconButton}
               onClick={() => setLight(false)}
             >
-              <Brightness7Icon />
+              <Brightness7Icon className={classes.icon} />
             </IconButton>
           ) : (
             <IconButton
               className={classes.iconButton}
               onClick={() => setLight(true)}
             >
-              <Brightness4Icon />
+              <Brightness4Icon className={classes.icon} />
             </IconButton>
           )}
         </>
       ) : (
         <div className={classes.drawerContainer}>
-          <AppDrawer />
+          <AppDrawer
+            setLight={setLight}
+            light={light}
+            className={classes.drawerIcon}
+          />
         </div>
       )}
     </AppBar>
   );
 }
+
+Header.propTypes = {
+  setLight: PropTypes.func,
+  light: PropTypes.bool,
+};
+
+export default Header;

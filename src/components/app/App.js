@@ -1,31 +1,35 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import {
+  createMuiTheme,
+  ThemeProvider,
+  responsiveFontSizes,
+} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import styles from './app.css';
 import Header from '../header/Header';
 import Container from '../container/Container';
 
-const darkTheme = createMuiTheme({
-  palette: {
-    type: 'dark',
-  },
-});
-
-const lightTheme = createMuiTheme({
-  palette: {
-    type: 'light',
-  },
-});
-
 export default function App() {
   const [light, setLight] = useState(true);
+  const palletType = light ? 'light' : 'dark';
+
+  let theme = createMuiTheme({
+    palette: {
+      type: palletType,
+    },
+    typography: {
+      fontFamily: 'sans-serif',
+    },
+  });
+
+  theme = responsiveFontSizes(theme);
 
   return (
     <main className={styles.root}>
       <Router>
-        <ThemeProvider theme={light ? lightTheme : darkTheme}>
+        <ThemeProvider theme={theme}>
           <CssBaseline />
           <Header setLight={setLight} light={light} />
           <Switch>

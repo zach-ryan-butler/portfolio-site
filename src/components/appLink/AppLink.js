@@ -2,12 +2,12 @@ import React from 'react';
 import { NavHashLink as RouterLink } from 'react-router-hash-link';
 import { Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
   link: {
     color: 'inherit',
-    fontFamily: 'Arial',
-    fontSize: '.6em',
+    fontSize: '1em',
     letterSpacing: '.2em',
     textTransform: 'uppercase',
     '&:hover': {
@@ -16,7 +16,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function AppLink({ path, title }) {
+function AppLink({ path, title }) {
   const classes = useStyles();
 
   return (
@@ -32,3 +32,10 @@ export default function AppLink({ path, title }) {
     </Link>
   );
 }
+
+AppLink.propTypes = {
+  path: PropTypes.string,
+  title: PropTypes.string,
+};
+
+export default AppLink;
