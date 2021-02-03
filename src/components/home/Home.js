@@ -33,7 +33,7 @@ export default function Home() {
       id='section-home'
       className={classes.root}
     >
-      <Box className={classes.contentContainer}>
+      <Box component='header' className={classes.contentContainer}>
         <Typography style={{ fontWeight: 600 }} variant='h1' component='h1'>
           Zach Butler
         </Typography>

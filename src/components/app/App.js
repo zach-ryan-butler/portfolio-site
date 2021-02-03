@@ -12,8 +12,8 @@ import Header from '../header/Header';
 import Container from '../container/Container';
 
 export default function App() {
-  const [light, setLight] = useState(true);
-  const palletType = light ? 'light' : 'dark';
+  const [lightOrDark, setLightOrDark] = useState(true);
+  const palletType = lightOrDark ? 'light' : 'dark';
 
   let theme = createMuiTheme({
     palette: {
@@ -31,7 +31,7 @@ export default function App() {
       <Router>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Header setLight={setLight} light={light} />
+          <Header setLightOrDark={setLightOrDark} lightOrDark={lightOrDark} />
           <Switch>
             <Route path='/' component={Container} />
             <Route path='/about' component={Container} />

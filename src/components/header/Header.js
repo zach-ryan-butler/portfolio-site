@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Toolbar, IconButton } from '@material-ui/core';
+import { AppBar, Box } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Brightness7Icon from '@material-ui/icons/Brightness7';
-import Brightness4Icon from '@material-ui/icons/Brightness4';
-import AppDrawer from '../drawer/Drawer';
+import AppDrawer from '../appDrawer/AppDrawer';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import PropTypes from 'prop-types';
 
-import AppLink from '../appLink/AppLink';
+import HeaderContents from '../headerContents/HeaderContents';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -25,30 +23,19 @@ const useStyles = makeStyles(theme => ({
       boxShadow: 'none',
       paddingLeft: '20px',
     },
+    transition: '250ms ease-in',
   },
   drawerContainer: {
     display: 'flex',
     alignItems: 'center',
     height: '100%',
   },
-  toolbar: {
-    width: '50vw',
-    justifyContent: 'space-between',
-  },
-  icon: {
-    width: '30px',
-    height: '30px',
-  },
-  iconButton: {
-    width: '50px',
-    height: '50px',
-  },
 }));
 
-function Header({ setLight, light }) {
+function Header({ setLightOrDark, lightOrDark }) {
   const classes = useStyles();
   const theme = useTheme();
-  const showMdUp = useMediaQuery(theme.breakpoints.up('md'));
+  const isScreenSizeMedium = useMediaQuery(theme.breakpoints.up('md'));
 
   const [isTransparent, setTransparent] = useState('transparent');
 
@@ -65,50 +52,27 @@ function Header({ setLight, light }) {
   }, []);
 
   return (
-    <AppBar color={isTransparent} className={classes.root}>
-      {showMdUp ? (
-        <>
-          <div />
-          <Toolbar className={classes.toolbar}>
-            <AppLink path='/#section-home' title='Home' />
-            <AppLink path='/about#section-about' title='About' />
-            <AppLink path='/projects#section-projects' title='Projects' />
-            <AppLink path='/resume#section-resume' title='Resume' />
-            <AppLink path='/contact#section-contact' title='Contact' />
-          </Toolbar>
-
-          {light ? (
-            <IconButton
-              className={classes.iconButton}
-              onClick={() => setLight(false)}
-            >
-              <Brightness7Icon className={classes.icon} />
-            </IconButton>
-          ) : (
-            <IconButton
-              className={classes.iconButton}
-              onClick={() => setLight(true)}
-            >
-              <Brightness4Icon className={classes.icon} />
-            </IconButton>
-          )}
-        </>
+    <AppBar component='nav' color={isTransparent} className={classes.root}>
+      {isScreenSizeMedium ? (
+        <HeaderContents
+          lightOrDark={lightOrDark}
+          setLightOrDark={setLightOrDark}
+        />
       ) : (
-        <div className={classes.drawerContainer}>
+        <Box className={classes.drawerContainer}>
           <AppDrawer
-            setLight={setLight}
-            light={light}
-            className={classes.drawerIcon}
+            setLightOrDark={setLightOrDark}
+            lightOrDark={lightOrDark}
           />
-        </div>
+        </Box>
       )}
     </AppBar>
   );
 }
 
 Header.propTypes = {
-  setLight: PropTypes.func,
-  light: PropTypes.bool,
+  setLightOrDark: PropTypes.func,
+  lightOrDark: PropTypes.bool,
 };
 
 export default Header;
