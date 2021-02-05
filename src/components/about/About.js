@@ -1,82 +1,52 @@
 import React from 'react';
 import {
   Container,
-  Box,
-  Paper,
-  Typography,
   Link,
+  Grid,
+  Typography,
   IconButton,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
-import backgroundImage from '../../assets/zach.png';
+import pictureOfMe from '../../assets/monochromatic profile pic.jpg';
 
 const useStyles = makeStyles(theme => ({
   root: {
     minHeight: '100vh',
-    padding: '80px',
-    justifyContent: 'center',
-    alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
-      paddingLeft: '15px',
-      paddingRight: '15px',
-      paddingTop: '50px',
+    padding: '80px 10px 80px 10px',
+    [theme.breakpoints.up('lg')]: {
+      paddingLeft: '80px',
+      paddingRight: '80px',
     },
-  },
-  aboutContainer: {
-    [theme.breakpoints.up('md')]: {
-      width: '100%',
-      display: 'flex',
-      flexDiretion: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    width: '100%',
-    flexDiretion: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  paper: {
-    [theme.breakpoints.up('md')]: {
-      height: '450px',
-      width: '450px',
-    },
-    [theme.breakpoints.up('sm')]: {
-      height: '450px',
-      width: '600px',
-    },
-    height: '450px',
-    width: '450px',
-    display: 'flex',
-    flexDirection: 'column',
-    padding: theme.spacing(2),
-    boxShadow: 'none',
-    backgroundColor: theme.palette.background.default,
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    borderRadius: '50%',
-  },
-  image: {
-    height: '100%',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
   },
   icon: {
-    width: '30px',
-    height: '30px',
+    width: '35px',
+    height: '35px',
   },
   iconButton: {
     width: '50px',
     height: '50px',
   },
-  iconContainer: {
-    width: '50%',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
+  image: {
+    height: '100%',
+    width: '100%',
+    objectFit: 'contain',
+  },
+  textContainer: {
+    width: '100%',
+    minHeight: '100%',
+    justifyContent: 'space-evenly',
+  },
+  textItem: {
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: '16px',
+      paddingBottom: '16px',
+    },
+  },
+  textColor: {
+    color: theme.palette.text.secondary,
   },
 }));
 
@@ -84,30 +54,48 @@ export default function About() {
   const classes = useStyles();
   return (
     <Container
-      maxWidth={false}
+      fixed
       component='section'
       id='section-about'
       className={classes.root}
     >
-      <Box className={classes.aboutContainer}>
-        <Paper className={classes.paper}>
-          <img className={classes.image} src={backgroundImage} />
-        </Paper>
-        <Paper className={classes.paper}>
-          <Typography style={{ fontSize: '4rem' }} variant='h1' component='h1'>
-            Zach Butler
-          </Typography>
-          <Typography style={{ fontSize: '2rem' }} variant='h2' component='h2'>
-            Software Engineer
-          </Typography>
-          <Typography>
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi,
-          </Typography>
-          <Box className={classes.iconContainer}>
+      <Grid container spacing={4}>
+        <Grid item md={6} className={classes.gridItem}>
+          <img className={classes.image} src={pictureOfMe} />
+        </Grid>
+        <Grid
+          item
+          container
+          md={6}
+          className={classes.textContainer}
+          direction='column'
+        >
+          <Grid item className={classes.textItem}>
+            <Typography style={{ fontWeight: 100 }} variant='h3'>
+              About <span style={{ fontWeight: 600 }}>Me</span>
+            </Typography>
+          </Grid>
+          <Grid item className={(classes.textItem, classes.textColor)}>
+            <Typography variant='body1'>
+              Primarily working with the MERN development stack but am always
+              curious about learning new technologies and looking for ways to
+              grow in tech.
+            </Typography>
+          </Grid>
+          <Grid
+            item
+            className={[classes.textItem, classes.textColor].join(' ')}
+          >
+            <Typography variant='body1'>
+              Excited to work collaboratively on a motivated team and solve real
+              world problems. When not happily coding away, I&apos;m usually
+              hiking trails or chasing that perfect powder day on the mountain.
+            </Typography>
+          </Grid>
+          <Grid
+            item
+            className={[classes.textItem, classes.textColor].join(' ')}
+          >
             <Link href='https://github.com/zach-ryan-butler'>
               <IconButton
                 className={classes.iconButton}
@@ -124,9 +112,9 @@ export default function About() {
                 <LinkedInIcon className={classes.icon} />
               </IconButton>
             </Link>
-          </Box>
-        </Paper>
-      </Box>
+          </Grid>
+        </Grid>
+      </Grid>
     </Container>
   );
 }

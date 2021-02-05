@@ -1,36 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Box } from '@material-ui/core';
+import { AppBar } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import AppDrawer from '../appDrawer/AppDrawer';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import PropTypes from 'prop-types';
 
 import HeaderContents from '../headerContents/HeaderContents';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   root: {
-    [theme.breakpoints.up('md')]: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      boxShadow: 'none',
-      paddingLeft: '20px',
-      paddingRight: '20px',
-      height: '10%',
-    },
-    [theme.breakpoints.down('md')]: {
-      height: '10%',
-      boxShadow: 'none',
-      paddingLeft: '20px',
-    },
-    transition: '250ms ease-in',
+    boxShadow: 'none',
+    height: '10%',
+    justifyContent: 'center',
   },
-  drawerContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    height: '100%',
-  },
-}));
+});
 
 function Header({ setLightOrDark, lightOrDark }) {
   const classes = useStyles();
@@ -53,19 +35,11 @@ function Header({ setLightOrDark, lightOrDark }) {
 
   return (
     <AppBar component='nav' color={isTransparent} className={classes.root}>
-      {isScreenSizeMedium ? (
-        <HeaderContents
-          lightOrDark={lightOrDark}
-          setLightOrDark={setLightOrDark}
-        />
-      ) : (
-        <Box className={classes.drawerContainer}>
-          <AppDrawer
-            setLightOrDark={setLightOrDark}
-            lightOrDark={lightOrDark}
-          />
-        </Box>
-      )}
+      <HeaderContents
+        lightOrDark={lightOrDark}
+        setLightOrDark={setLightOrDark}
+        isScreenSizeMedium={isScreenSizeMedium}
+      />
     </AppBar>
   );
 }

@@ -15,12 +15,12 @@ const useStyles = makeStyles({
     justifyContent: 'space-around',
   },
   icon: {
-    width: '50px',
-    height: '50px',
+    width: '35px',
+    height: '35px',
   },
   iconButton: {
-    width: '70px',
-    height: '70px',
+    width: '50px',
+    height: '50px',
   },
   iconContainer: {
     display: 'flex',
@@ -50,16 +50,18 @@ function AppDrawer({ setLightOrDark, lightOrDark }) {
         <DehazeIcon className={classes.icon} />
       </IconButton>
 
-      <Drawer anchor={'top'} open={open} onClose={toggleDrawer(false)}>
-        <List
-          onClick={toggleDrawer(false)}
-          className={classes.list}
-          onKeyDown={toggleDrawer(false)}
-        >
-          <DrawerIcons
-            lightOrDark={lightOrDark}
-            setLightOrDark={setLightOrDark}
-          />
+      <Drawer
+        anchor={'top'}
+        open={open}
+        onClick={toggleDrawer(false)}
+        onClose={toggleDrawer(false)}
+        onKeyDown={toggleDrawer(false)}
+      >
+        <DrawerIcons
+          lightOrDark={lightOrDark}
+          setLightOrDark={setLightOrDark}
+        />
+        <List className={classes.list}>
           <DrawerLinksList />
         </List>
       </Drawer>

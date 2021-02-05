@@ -24,7 +24,7 @@ function AppLink({ path, title }) {
       className={classes.link}
       smooth
       activeClassName='selected'
-      activeStyle={{ color: 'red' }}
+      activeStyle={{ color: '#f44336' }}
       to={path}
       component={RouterLink}
     >

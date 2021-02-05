@@ -14,7 +14,7 @@ export default function DrawerLinksList() {
           to={path}
           smooth
           activeClassName='selected'
-          activeStyle={{ color: 'red' }}
+          activeStyle={{ color: '#f44336' }}
           component={RouterLink}
         >
           <ListItemText primary={title} />
