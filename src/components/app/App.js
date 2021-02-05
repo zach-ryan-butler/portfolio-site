@@ -8,7 +8,6 @@ import {
 } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import styles from './app.css';
 import Header from '../header/Header';
 import Container from '../container/Container';
 
@@ -39,7 +38,12 @@ export default function App() {
     typography: {
       fontFamily: 'sans-serif',
       body1: {
-        fontSize: '1.1rem',
+        fontSize: '1.2rem',
+        LineHeight: 1.6,
+      },
+      body2: {
+        fontSize: '1.0rem',
+        lineHeight: 1.6,
       },
     },
   });

@@ -15,10 +15,13 @@ import pictureOfMe from '../../assets/monochromatic profile pic.jpg';
 const useStyles = makeStyles(theme => ({
   root: {
     minHeight: '100vh',
-    padding: '80px 10px 80px 10px',
+    paddingTop: theme.spacing(10),
+    paddingBottom: theme.spacing(10),
+    paddingLeft: theme.spacing(1.5),
+    padding: theme.spacing(1.5),
     [theme.breakpoints.up('lg')]: {
-      paddingLeft: '80px',
-      paddingRight: '80px',
+      paddingLeft: theme.spacing(10),
+      paddingRight: theme.spacing(10),
     },
   },
   icon: {
@@ -41,8 +44,8 @@ const useStyles = makeStyles(theme => ({
   },
   textItem: {
     [theme.breakpoints.down('sm')]: {
-      paddingTop: '16px',
-      paddingBottom: '16px',
+      paddingTop: theme.spacing(2),
+      paddingBottom: theme.spacing(2),
     },
   },
   textColor: {
@@ -60,7 +63,7 @@ export default function About() {
       className={classes.root}
     >
       <Grid container spacing={4}>
-        <Grid item md={6} className={classes.gridItem}>
+        <Grid item md={6}>
           <img className={classes.image} src={pictureOfMe} />
         </Grid>
         <Grid
@@ -75,21 +78,25 @@ export default function About() {
               About <span style={{ fontWeight: 600 }}>Me</span>
             </Typography>
           </Grid>
-          <Grid item className={(classes.textItem, classes.textColor)}>
+          <Grid
+            item
+            className={[classes.textItem, classes.textColor].join(' ')}
+          >
             <Typography variant='body1'>
-              Primarily working with the MERN development stack but am always
-              curious about learning new technologies and looking for ways to
-              grow in tech.
+              Primarily working with the MERN/PERN development stack but am
+              always curious about learning new technologies and looking for
+              ways to grow in tech.
             </Typography>
           </Grid>
           <Grid
             item
             className={[classes.textItem, classes.textColor].join(' ')}
           >
-            <Typography variant='body1'>
-              Excited to work collaboratively on a motivated team and solve real
-              world problems. When not happily coding away, I&apos;m usually
-              hiking trails or chasing that perfect powder day on the mountain.
+            <Typography variant='body2'>
+              I&apos;m excited to work collaboratively on a motivated team and
+              solve real world problems. When not happily coding away, I&apos;m
+              usually hiking trails or chasing that perfect powder day on the
+              mountain.
             </Typography>
           </Grid>
           <Grid
