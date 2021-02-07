@@ -8,12 +8,12 @@ import Contact from '../contact/Contact';
 
 export default function Container() {
   return (
-    <section>
+    <>
       <Home />
       <About />
       <Projects />
       <Resume />
       <Contact />
-    </section>
+    </>
   );
 }

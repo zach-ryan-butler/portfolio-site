@@ -6,25 +6,35 @@ import PropTypes from 'prop-types';
 
 import HeaderContents from '../headerContents/HeaderContents';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     boxShadow: 'none',
+    background: 'transparent',
+    color: 'inherit',
     height: '10%',
     justifyContent: 'center',
   },
-});
+  navScrolled: {
+    background: theme.palette.background.default,
+    color: 'inherit',
+    height: '10%',
+    justifyContent: 'center',
+  },
+}));
 
 function Header({ setLightOrDark, lightOrDark }) {
   const classes = useStyles();
   const theme = useTheme();
-  const isScreenSizeMedium = useMediaQuery(theme.breakpoints.up('md'));
+  const isScreenSizeMedium = useMediaQuery(theme.breakpoints.up('md'), {
+    noSsr: true,
+  });
 
-  const [isTransparent, setTransparent] = useState('transparent');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const show = window.scrollY > 15;
-      show ? setTransparent('default') : setTransparent('transparent');
+      show ? setIsScrolled(true) : setIsScrolled(false);
     };
     document.addEventListener('scroll', handleScroll);
 
@@ -34,7 +44,10 @@ function Header({ setLightOrDark, lightOrDark }) {
   }, []);
 
   return (
-    <AppBar component='nav' color={isTransparent} className={classes.root}>
+    <AppBar
+      component='header'
+      className={isScrolled ? classes.navScrolled : classes.root}
+    >
       <HeaderContents
         lightOrDark={lightOrDark}
         setLightOrDark={setLightOrDark}

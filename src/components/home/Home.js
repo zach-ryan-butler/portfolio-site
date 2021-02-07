@@ -23,7 +23,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Home() {
+const Home = () => {
   const classes = useStyles();
   return (
     <Container
@@ -43,4 +43,6 @@ export default function Home() {
       </Box>
     </Container>
   );
-}
+};
+
+export default Home;

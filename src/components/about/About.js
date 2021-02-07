@@ -18,7 +18,8 @@ const useStyles = makeStyles(theme => ({
     paddingTop: theme.spacing(10),
     paddingBottom: theme.spacing(10),
     paddingLeft: theme.spacing(1.5),
-    padding: theme.spacing(1.5),
+    paddingRight: theme.spacing(1.5),
+    border: '4px solid yellow',
     [theme.breakpoints.up('lg')]: {
       paddingLeft: theme.spacing(10),
       paddingRight: theme.spacing(10),
@@ -53,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function About() {
+const About = () => {
   const classes = useStyles();
   return (
     <Container
@@ -113,6 +114,7 @@ export default function About() {
             </Link>
             <Link href='https://www.linkedin.com/in/zach-ryan-butler/'>
               <IconButton
+                style={{ color: '#2867B2' }}
                 className={classes.iconButton}
                 aria-label='Linkedin link'
               >
@@ -124,4 +126,6 @@ export default function About() {
       </Grid>
     </Container>
   );
-}
+};
+
+export default About;
