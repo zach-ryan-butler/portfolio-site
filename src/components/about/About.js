@@ -19,7 +19,6 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(10),
     paddingLeft: theme.spacing(1.5),
     paddingRight: theme.spacing(1.5),
-    border: '4px solid yellow',
     [theme.breakpoints.up('lg')]: {
       paddingLeft: theme.spacing(10),
       paddingRight: theme.spacing(10),
@@ -75,7 +74,7 @@ const About = () => {
           direction='column'
         >
           <Grid item className={classes.textItem}>
-            <Typography style={{ fontWeight: 100 }} variant='h3'>
+            <Typography style={{ fontWeight: 100 }} variant='h3' component='h1'>
               About <span style={{ fontWeight: 600 }}>Me</span>
             </Typography>
           </Grid>

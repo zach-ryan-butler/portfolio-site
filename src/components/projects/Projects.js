@@ -3,6 +3,7 @@ import { Container, Grid, Typography, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import ProjectsRadioGroup from '../projectsRadioGroup/ProjectsRadioGroup';
+import ProjectItem from '../projectItem/ProjectItem';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -60,7 +61,7 @@ export default function Projects() {
           item
           xs={12}
         >
-          <Typography style={{ fontWeight: 100 }} variant='h3'>
+          <Typography style={{ fontWeight: 100 }} variant='h3' component='h1'>
             Featured <span style={{ fontWeight: 600 }}>Projects</span>
           </Typography>
         </Grid>
@@ -85,6 +86,9 @@ export default function Projects() {
           container
           xs={12}
         >
+          <Grid style={{ margin: 0 }} item xs={12} md={4}>
+            <ProjectItem />
+          </Grid>
           <Grid item xs={12} md={4}>
             <Paper className={classes.paper}></Paper>
           </Grid>

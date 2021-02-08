@@ -12,6 +12,8 @@ const useStyles = makeStyles(theme => ({
     textTransform: 'uppercase',
     '&:hover': {
       textDecoration: 'none',
+      color: theme.palette.success.main,
+      transition: 'color 250ms ease-in',
     },
   },
   color: {
