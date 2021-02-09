@@ -25,7 +25,7 @@ function HeaderContents({ lightOrDark, setLightOrDark, isScreenSizeMedium }) {
     <>
       {isScreenSizeMedium ? (
         <Toolbar className={classes.toolbar}>
-          <Box />
+          <Box style={{ width: '50px' }} />
           <Box className={classes.linksContainer}>
             <HeaderLinks />
           </Box>
