@@ -13,6 +13,9 @@ const useStyles = makeStyles(theme => ({
       color: theme.palette.success.main,
     },
   },
+  text: {
+    width: '100px',
+  },
   label: {
     textAlign: 'center',
     '&:hover': {
@@ -21,8 +24,8 @@ const useStyles = makeStyles(theme => ({
     },
   },
   radioGroup: {
-    width: '70%',
-    justifyContent: 'space-evenly',
+    width: '400px',
+    justifyContent: 'center',
   },
 }));
 
@@ -37,14 +40,19 @@ export default function ProjectsRadioGroup({ value, handleChange }) {
     >
       <FormControlLabel
         classes={{ label: classes.label }}
-        value='All'
+        className={classes.formLabel}
+        value=''
         control={
           <Radio
             classes={{ checked: classes.checked }}
             style={{ display: 'none' }}
           />
         }
-        label={<Typography variant='body1'>All</Typography>}
+        label={
+          <Typography className={classes.text} variant='body1'>
+            All
+          </Typography>
+        }
       />
       <FormControlLabel
         classes={{ label: classes.label }}
@@ -55,18 +63,26 @@ export default function ProjectsRadioGroup({ value, handleChange }) {
             style={{ display: 'none' }}
           />
         }
-        label={<Typography variant='body1'>API&apos;s</Typography>}
+        label={
+          <Typography className={classes.text} variant='body1'>
+            API&apos;s
+          </Typography>
+        }
       />
       <FormControlLabel
         classes={{ label: classes.label }}
-        value='Full Stack'
+        value='Fullstack'
         control={
           <Radio
             classes={{ checked: classes.checked }}
             style={{ display: 'none' }}
           />
         }
-        label={<Typography variant='body1'>Full Stack</Typography>}
+        label={
+          <Typography className={classes.text} variant='body1'>
+            Full Stack
+          </Typography>
+        }
       />
     </RadioGroup>
   );

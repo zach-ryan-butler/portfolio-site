@@ -99,10 +99,7 @@ const About = () => {
               mountain.
             </Typography>
           </Grid>
-          <Grid
-            item
-            className={[classes.textItem, classes.textColor].join(' ')}
-          >
+          <Grid item className={classes.textItem}>
             <Link href='https://github.com/zach-ryan-butler'>
               <IconButton
                 className={classes.iconButton}

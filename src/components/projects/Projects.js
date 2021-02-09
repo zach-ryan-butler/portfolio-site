@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Container, Grid, Typography, Paper } from '@material-ui/core';
+import { Container, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import ProjectsRadioGroup from '../projectsRadioGroup/ProjectsRadioGroup';
-import ProjectItem from '../projectItem/ProjectItem';
+import ProjectList from '../projectList/ProjectList';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -13,7 +13,6 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(10),
     paddingLeft: theme.spacing(1.5),
     paddingRight: theme.spacing(1.5),
-    border: '4px solid blue',
     [theme.breakpoints.up('lg')]: {
       paddingLeft: theme.spacing(10),
       paddingRight: theme.spacing(10),
@@ -24,7 +23,6 @@ const useStyles = makeStyles(theme => ({
   },
   paper: {
     height: '300px',
-    backgroundColor: 'pink',
     margin: '20px',
   },
   gridItem: {
@@ -34,7 +32,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Projects() {
-  const [value, setValue] = useState(null);
+  const [value, setValue] = useState('');
 
   const handleChange = ({ target }) => {
     setValue(target.value);
@@ -49,26 +47,27 @@ export default function Projects() {
       className={classes.root}
       component='section'
     >
-      <Grid
-        container
-        style={{
-          border: '3px solid black',
-        }}
-      >
+      <Grid container>
         <Grid
-          style={{ border: '3px solid green' }}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
           className={classes.gridItem}
           item
           xs={12}
         >
-          <Typography style={{ fontWeight: 100 }} variant='h3' component='h1'>
+          <Typography
+            style={{ fontWeight: 100, paddingBottom: '25px' }}
+            variant='h3'
+            component='h1'
+          >
             Featured <span style={{ fontWeight: 600 }}>Projects</span>
           </Typography>
         </Grid>
 
         <Grid
           style={{
-            border: '3px solid pink',
             justifyContent: 'center',
           }}
           className={classes.gridItem}
@@ -78,32 +77,8 @@ export default function Projects() {
         >
           <ProjectsRadioGroup value={value} handleChange={handleChange} />
         </Grid>
-
-        <Grid
-          style={{ border: '3px solid red' }}
-          className={classes.gridItem}
-          item
-          container
-          xs={12}
-        >
-          <Grid style={{ margin: 0 }} item xs={12} md={4}>
-            <ProjectItem />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Paper className={classes.paper}></Paper>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Paper className={classes.paper}></Paper>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Paper className={classes.paper}></Paper>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Paper className={classes.paper}></Paper>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Paper className={classes.paper}></Paper>
-          </Grid>
+        <Grid className={classes.gridItem} item container xs={12}>
+          <ProjectList value={value} />
         </Grid>
       </Grid>
     </Container>
