@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Grid, Typography } from '@material-ui/core';
 
 import ResumeItem from '../resumeItem/ResumeItem';
+import TechStackCard from '../techStackCard/TechStackCard';
 import useStyles from './Resume.styles';
 
 export default function Resume() {
@@ -16,21 +17,17 @@ export default function Resume() {
       <Typography className={classes.headerText} variant='h3' component='h1'>
         My <span style={{ fontWeight: 600 }}>Resume</span>
       </Typography>
-      <Grid container style={{ border: '3px solid green' }}>
+      <Grid container>
         <Grid
           xs={12}
           md={6}
           item
           container
-          style={{ border: '3px solid black', minHeight: '100%' }}
+          style={{ minHeight: '100%' }}
           direction='column'
         >
-          <Grid
-            item
-            container
-            style={{ border: '3px solid blue', mindHeight: '50%' }}
-          >
-            <Grid item xs={12} style={{ border: '3px solid pink' }}>
+          <Grid item container className={classes.experienceContainer}>
+            <Grid item xs={12}>
               <Typography
                 className={classes.subHeaderText}
                 variant='h5'
@@ -39,7 +36,7 @@ export default function Resume() {
                 Experience
               </Typography>
             </Grid>
-            <Grid item xs={12} style={{ border: '3px solid pink' }}>
+            <Grid item xs={12}>
               <ResumeItem
                 date='October 2020 - present'
                 title='Front End Engineer'
@@ -53,7 +50,7 @@ export default function Resume() {
               />
             </Grid>
           </Grid>
-          <Grid item container style={{ border: '3px solid orange' }}>
+          <Grid item container className={classes.educationContainer}>
             <Grid item>
               <Typography
                 className={classes.subHeaderText}
@@ -63,7 +60,7 @@ export default function Resume() {
                 Education
               </Typography>
             </Grid>
-            <Grid item xs={12} style={{ border: '3px solid pink' }}>
+            <Grid item xs={12}>
               <ResumeItem
                 date='July 2019 - January 2020'
                 title='Software Engineering'
@@ -76,11 +73,25 @@ export default function Resume() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12} md={6} style={{ border: '3px solid red' }}>
+        <Grid
+          item
+          container
+          xs={12}
+          md={6}
+          direction='column'
+          className={classes.techStackContainer}
+        >
           <Grid item>
-            <Typography variant='h5' component='h2'>
+            <Typography
+              className={classes.subHeaderText}
+              variant='h5'
+              component='h2'
+            >
               Tech Stack
             </Typography>
+          </Grid>
+          <Grid item style={{ flex: 1 }}>
+            <TechStackCard />
           </Grid>
         </Grid>
       </Grid>

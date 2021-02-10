@@ -7,19 +7,44 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(10),
     paddingLeft: theme.spacing(1.5),
     paddingRight: theme.spacing(1.5),
-    border: '3px solid pink',
     [theme.breakpoints.up('lg')]: {
       paddingLeft: theme.spacing(10),
       paddingRight: theme.spacing(10),
     },
+    [theme.breakpoints.up('xl')]: {
+      padding: 0,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'column',
+    },
+  },
+  educationContainer: {
+    [theme.breakpoints.down('md')]: {
+      paddingBottom: theme.spacing(4),
+    },
+    [theme.breakpoints.up('md')]: {
+      padding: 0,
+    },
+  },
+  experienceContainer: {
+    paddingBottom: theme.spacing(4),
   },
   headerText: {
     fontWeight: 100,
-    paddingBottom: '30px',
+    paddingBottom: theme.spacing(4),
     textAlign: 'center',
+    [theme.breakpoints.up('xl')]: {
+      paddingBottom: theme.spacing(6.25),
+    },
   },
   subHeaderText: {
-    paddingLeft: '16px',
+    paddingLeft: theme.spacing(2),
+  },
+  techStackContainer: {
+    [theme.breakpoints.up('md')]: {
+      paddingLeft: theme.spacing(4),
+    },
   },
 }));
 

@@ -28,7 +28,7 @@ export default function Projects() {
           xs={12}
         >
           <Typography
-            style={{ fontWeight: 100, paddingBottom: '25px' }}
+            className={classes.headerText}
             variant='h3'
             component='h1'
           >

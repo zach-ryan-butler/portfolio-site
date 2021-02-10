@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   icon: {
     width: '35px',
     height: '35px',
@@ -12,8 +12,8 @@ const useStyles = makeStyles({
   iconContainer: {
     display: 'flex',
     justifyContent: 'space-between',
-    paddingTop: '8px',
+    paddingTop: theme.spacing(1),
   },
-});
+}));
 
 export default useStyles;

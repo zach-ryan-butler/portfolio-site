@@ -1,8 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
-    margin: '20px',
+    margin: theme.spacing(2.5),
   },
   buttonContainer: {
     justifyContent: 'center',
@@ -17,6 +17,6 @@ const useStyles = makeStyles({
       textDecoration: 'none',
     },
   },
-});
+}));
 
 export default useStyles;

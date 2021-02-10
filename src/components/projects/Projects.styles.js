@@ -11,17 +11,27 @@ const useStyles = makeStyles(theme => ({
       paddingLeft: theme.spacing(10),
       paddingRight: theme.spacing(10),
     },
+    [theme.breakpoints.up('xl')]: {
+      padding: 0,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+  },
+  headerText: {
+    fontWeight: 100,
+    paddingBottom: theme.spacing(3.125),
   },
   radioGroupContainer: {
     justifyContent: 'center',
   },
   paper: {
     height: '300px',
-    margin: '20px',
+    margin: theme.spacing(2.5),
   },
   gridItem: {
-    paddingTop: '20px',
-    paddingBottom: '20px',
+    paddingTop: theme.spacing(2.5),
+    paddingBottom: theme.spacing(2.5),
   },
 }));
 

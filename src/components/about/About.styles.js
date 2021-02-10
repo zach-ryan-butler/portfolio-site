@@ -11,6 +11,12 @@ const useStyles = makeStyles(theme => ({
       paddingLeft: theme.spacing(10),
       paddingRight: theme.spacing(10),
     },
+    [theme.breakpoints.up('xl')]: {
+      padding: 0,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
   },
   icon: {
     width: '35px',
