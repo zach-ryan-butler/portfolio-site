@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import {
   Card,
   CardMedia,
@@ -11,24 +10,7 @@ import {
   Zoom,
 } from '@material-ui/core';
 
-const useStyles = makeStyles({
-  root: {
-    margin: '20px',
-  },
-  buttonContainer: {
-    justifyContent: 'center',
-  },
-  media: {
-    height: '200px',
-    backgroundSize: 'contain',
-  },
-  link: {
-    color: 'inherit',
-    '&:hover': {
-      textDecoration: 'none',
-    },
-  },
-});
+import useStyles from './ProjectItem.styles';
 
 export default function ProjectItem({
   image,

@@ -4,26 +4,12 @@ import {
   createMuiTheme,
   ThemeProvider,
   responsiveFontSizes,
-  makeStyles,
 } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import Header from '../header/Header';
 import Container from '../container/Container';
-
-const useStyles = makeStyles({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    boxSizing: 'border-box',
-    minWidth: '100vw',
-    maxWidth: '100vw',
-    minHeight: '100vh',
-  },
-});
+import useStyles from './App.styles';
 
 export default function App() {
   const [lightOrDark, setLightOrDark] = useState(true);
@@ -44,6 +30,9 @@ export default function App() {
       body2: {
         fontSize: '1.0rem',
         lineHeight: 1.6,
+      },
+      h5: {
+        fontWeight: 300,
       },
     },
   });

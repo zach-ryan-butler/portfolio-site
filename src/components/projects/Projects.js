@@ -1,43 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Grid, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 
 import ProjectsRadioGroup from '../projectsRadioGroup/ProjectsRadioGroup';
 import ProjectList from '../projectList/ProjectList';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    minHeight: '100vh',
-    boxSizing: 'border-box',
-    paddingTop: theme.spacing(10),
-    paddingBottom: theme.spacing(10),
-    paddingLeft: theme.spacing(1.5),
-    paddingRight: theme.spacing(1.5),
-    [theme.breakpoints.up('lg')]: {
-      paddingLeft: theme.spacing(10),
-      paddingRight: theme.spacing(10),
-    },
-  },
-  radioGroupContainer: {
-    justifyContent: 'center',
-  },
-  paper: {
-    height: '300px',
-    margin: '20px',
-  },
-  gridItem: {
-    paddingTop: '20px',
-    paddingBottom: '20px',
-  },
-}));
+import { useProjects } from './projectHooks';
+import useStyles from './Projects.styles';
 
 export default function Projects() {
-  const [value, setValue] = useState('');
-
-  const handleChange = ({ target }) => {
-    setValue(target.value);
-    console.log(target.value);
-  };
+  const [value, handleChange] = useProjects();
 
   const classes = useStyles();
   return (

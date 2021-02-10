@@ -1,25 +1,10 @@
 import React from 'react';
 import { Box, IconButton } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import LightDarkButton from '../lightDarkButton/LightDarkButton';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 import PropTypes from 'prop-types';
 
-const useStyles = makeStyles({
-  icon: {
-    width: '35px',
-    height: '35px',
-  },
-  iconButton: {
-    width: '50px',
-    height: '50px',
-  },
-  iconContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    paddingTop: '8px',
-  },
-});
+import useStyles from './DrawerIcons.styles';
 
 function DrawerIcons({ lightOrDark, setLightOrDark }) {
   const classes = useStyles();

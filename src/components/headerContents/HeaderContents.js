@@ -1,23 +1,11 @@
 import React from 'react';
 import { Toolbar, Box } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
 import HeaderLinks from '../headerLinks/HeaderLinks';
 import LightDarkButton from '../lightDarkButton/LightDarkButton';
 import AppDrawer from '../appDrawer/AppDrawer';
-
-const useStyles = makeStyles({
-  linksContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    width: '50%',
-  },
-  toolbar: {
-    height: '100%',
-    justifyContent: 'space-between',
-  },
-});
+import useStyles from './HeaderContents.styles';
 
 function HeaderContents({ lightOrDark, setLightOrDark, isScreenSizeMedium }) {
   const classes = useStyles();
