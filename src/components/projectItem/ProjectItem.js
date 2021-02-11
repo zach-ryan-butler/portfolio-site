@@ -9,15 +9,17 @@ import {
   Link,
   Zoom,
 } from '@material-ui/core';
+import PropTypes from 'prop-types';
 
 import useStyles from './ProjectItem.styles';
 
-export default function ProjectItem({
+function ProjectItem({
   image,
   title,
   alt,
   githubUrl,
   deployedUrl,
+  isDeployed,
 }) {
   const classes = useStyles();
   return (
@@ -39,13 +41,28 @@ export default function ProjectItem({
               Github
             </Button>
           </Link>
-          <Link className={classes.link} href={deployedUrl}>
-            <Button size='small' color='inherit'>
-              Deployed site
-            </Button>
-          </Link>
+          {isDeployed ? (
+            <Link className={classes.link} href={deployedUrl}>
+              <Button size='small' color='inherit'>
+                Deployed site
+              </Button>
+            </Link>
+          ) : (
+            <></>
+          )}
         </CardActions>
       </Card>
     </Zoom>
   );
 }
+
+ProjectItem.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string,
+  alt: PropTypes.string,
+  githubUrl: PropTypes.string,
+  deployedUrl: PropTypes.string,
+  isDeployed: PropTypes.bool,
+};
+
+export default ProjectItem;

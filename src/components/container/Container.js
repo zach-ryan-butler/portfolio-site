@@ -10,9 +10,9 @@ export default function Container() {
   return (
     <>
       <Home />
-      <About />
-      <Projects />
       <Resume />
+      <Projects />
+      <About />
       <Contact />
     </>
   );

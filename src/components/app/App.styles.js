@@ -8,8 +8,8 @@ const useStyles = makeStyles({
     top: 0,
     left: 0,
     boxSizing: 'border-box',
-    minWidth: '100vw',
-    maxWidth: '100vw',
+    minWidth: '100%',
+    maxWidth: '100%',
     minHeight: '100vh',
   },
 });

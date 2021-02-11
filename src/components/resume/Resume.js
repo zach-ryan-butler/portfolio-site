@@ -11,8 +11,8 @@ export default function Resume() {
     <Container
       fixed
       component='section'
-      id='section-resume'
       className={classes.root}
+      id='section-resume'
     >
       <Typography className={classes.headerText} variant='h3' component='h1'>
         My <span style={{ fontWeight: 600 }}>Resume</span>
@@ -40,14 +40,15 @@ export default function Resume() {
               <ResumeItem
                 date='October 2020 - present'
                 title='Front End Engineer'
-                body='Developed and maintained an accessibility first social media
-                    platform on a dynmaic team of volunteers. Implemented React,
-                    React Native, and Redux code across three seperate web
-                    portals and a mobile application. Worked closely with remote
-                    team members to intergrate application objectives into
-                    sustainable design practices.'
                 where='Rapid Health Oregon'
-              />
+              >
+                Developed and maintained an accessibility first social media
+                platform on a dynamic team of volunteers. Implemented React,
+                React Native, and Redux code across three seperate web portals
+                and a mobile application. Worked closely with remote team
+                members to intergrate application objectives into sustainable
+                design practices.
+              </ResumeItem>
             </Grid>
           </Grid>
           <Grid item container className={classes.educationContainer}>
@@ -64,12 +65,13 @@ export default function Resume() {
               <ResumeItem
                 date='July 2019 - January 2020'
                 title='Software Engineering'
-                body='                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-                where='Vocational School'
-              />
+                where='Alchemy Code Lab'
+              >
+                Rigorous full stack development course with a focus on depth of
+                knowledge and agile practices. Taught fundamental programming
+                concepts entirely through JavaScript with an emphasis on test
+                and design driven development.
+              </ResumeItem>
             </Grid>
           </Grid>
         </Grid>

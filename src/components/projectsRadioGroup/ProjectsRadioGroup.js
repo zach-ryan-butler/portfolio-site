@@ -5,10 +5,11 @@ import {
   FormControlLabel,
   Typography,
 } from '@material-ui/core';
+import PropTypes from 'prop-types';
 
 import useStyles from './ProjectsRadioGroup.styles';
 
-export default function ProjectsRadioGroup({ value, handleChange }) {
+function ProjectsRadioGroup({ value, handleChange }) {
   const classes = useStyles();
   return (
     <RadioGroup
@@ -66,3 +67,10 @@ export default function ProjectsRadioGroup({ value, handleChange }) {
     </RadioGroup>
   );
 }
+
+ProjectsRadioGroup.propTypes = {
+  value: PropTypes.string,
+  handleChange: PropTypes.func,
+};
+
+export default ProjectsRadioGroup;

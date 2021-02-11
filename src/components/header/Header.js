@@ -5,6 +5,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import PropTypes from 'prop-types';
 
 import HeaderContents from '../headerContents/HeaderContents';
+import HideOnScroll from '../hideOnScroll/HideOnScroll';
 import useStyles from './Header.styles';
 import { useScroll } from './headerHooks';
 
@@ -19,16 +20,18 @@ function Header({ setLightOrDark, lightOrDark }) {
   });
 
   return (
-    <AppBar
-      component='header'
-      className={isScrolled ? classes.navScrolled : classes.root}
-    >
-      <HeaderContents
-        lightOrDark={lightOrDark}
-        setLightOrDark={setLightOrDark}
-        isScreenSizeMedium={isScreenSizeMedium}
-      />
-    </AppBar>
+    <HideOnScroll>
+      <AppBar
+        component='header'
+        className={isScrolled ? classes.navScrolled : classes.root}
+      >
+        <HeaderContents
+          lightOrDark={lightOrDark}
+          setLightOrDark={setLightOrDark}
+          isScreenSizeMedium={isScreenSizeMedium}
+        />
+      </AppBar>
+    </HideOnScroll>
   );
 }
 

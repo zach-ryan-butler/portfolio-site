@@ -13,9 +13,9 @@ export default function Projects() {
   return (
     <Container
       fixed
-      id='section-projects'
       className={classes.root}
       component='section'
+      id='section-projects'
     >
       <Grid container>
         <Grid
@@ -23,7 +23,6 @@ export default function Projects() {
             display: 'flex',
             justifyContent: 'center',
           }}
-          className={classes.gridItem}
           item
           xs={12}
         >

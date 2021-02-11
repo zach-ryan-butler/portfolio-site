@@ -23,11 +23,12 @@ const useStyles = makeStyles(theme => ({
     width: '15px',
   },
   titleText: {
+    color: theme.palette.text.secondary,
     paddingBottom: theme.spacing(1.2),
-    color: theme.palette.success.main,
   },
   whereText: {
-    color: theme.palette.text.secondary,
+    color: theme.palette.success.main,
+    paddingBottom: theme.spacing(1.2),
   },
 }));
 

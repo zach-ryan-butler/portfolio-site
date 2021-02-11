@@ -14,12 +14,16 @@ import useStyles from './App.styles';
 export default function App() {
   const [lightOrDark, setLightOrDark] = useState(true);
   const palletType = lightOrDark ? 'light' : 'dark';
+  const secondaryBackgroundColor = lightOrDark ? '#f5f5f5' : '#3A3A3A';
+  const secondaryPaperColor = lightOrDark ? '#fff' : '#303030';
 
   const classes = useStyles();
 
   let theme = createMuiTheme({
     palette: {
       type: palletType,
+      secondaryBackground: secondaryBackgroundColor,
+      secondaryPaper: secondaryPaperColor,
     },
     typography: {
       fontFamily: 'sans-serif',
