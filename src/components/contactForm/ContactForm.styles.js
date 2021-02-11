@@ -16,9 +16,9 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     width: '170px',
-    marginTop: theme.spacing(4),
+    marginTop: theme.spacing(0.5),
     backgroundColor: theme.palette.success.main,
-    color: 'inherit',
+    color: theme.palette.common.white,
     '&:hover': {
       backgroundColor: theme.palette.success.main,
     },

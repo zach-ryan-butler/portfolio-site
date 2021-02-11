@@ -15,7 +15,7 @@ export default function TechStackCard() {
             <Typography className={classes.bodyText}>CSS</Typography>
             <Typography className={classes.bodyText}>JavaScript</Typography>
           </Box>
-          <Box className={classes.box}>
+          <Box className={classes.rightBoxes}>
             <Typography className={classes.titleText}>Dev Practices</Typography>
             <Typography className={classes.bodyText}>
               TDD with Jest/Enzyme
@@ -36,7 +36,7 @@ export default function TechStackCard() {
             <Typography className={classes.bodyText}>React Native</Typography>
             <Typography className={classes.bodyText}>Socket.io</Typography>
           </Box>
-          <Box className={classes.box}>
+          <Box className={classes.rightBoxes}>
             <Typography className={classes.titleText}>Databases</Typography>
             <Typography className={classes.bodyText}>MongoDB</Typography>
             <Typography className={classes.bodyText}>Firebase</Typography>

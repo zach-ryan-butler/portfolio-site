@@ -9,10 +9,6 @@ const useStyles = makeStyles(theme => ({
   box: {
     width: '50%',
   },
-  bodyText: {
-    paddingBottom: theme.spacing(1.2),
-    color: theme.palette.text.secondary,
-  },
   boxContainer: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -23,6 +19,16 @@ const useStyles = makeStyles(theme => ({
   boxSubContainer: {
     display: 'flex',
     width: '100%',
+  },
+  bodyText: {
+    paddingBottom: theme.spacing(1.2),
+    color: theme.palette.text.secondary,
+  },
+  rightBoxes: {
+    width: '50%',
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: theme.spacing(3.75),
+    },
   },
   titleText: {
     paddingBottom: theme.spacing(1.2),
