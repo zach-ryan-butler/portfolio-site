@@ -23,8 +23,13 @@ const useStyles = makeStyles(theme => ({
       backgroundColor: theme.palette.success.main,
     },
   },
-  textField: {
-    marginBottom: theme.spacing(2),
+  emptyBox: {
+    height: theme.spacing(3.5),
+  },
+  errorMessage: {
+    height: theme.spacing(3.5),
+    paddingLeft: '14px',
+    color: theme.palette.error.main,
   },
 }));
 

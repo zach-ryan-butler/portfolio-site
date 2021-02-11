@@ -9,7 +9,7 @@ import useStyles from './ContactForm.styles';
 export default function ContactForm() {
   const classes = useStyles();
 
-  const { register, handleSubmit, errors } = useForm({
+  const { register, handleSubmit, errors, reset } = useForm({
     resolver: yupResolver(contactFormSchema),
     mode: 'onBlur',
     reValidateMode: 'onBlur',
@@ -17,12 +17,12 @@ export default function ContactForm() {
 
   const handleSend = formValues => {
     console.log(formValues);
+    reset();
   };
 
   return (
     <form className={classes.root} onSubmit={handleSubmit(handleSend)}>
       <TextField
-        className={classes.textField}
         id='name'
         name='name'
         inputRef={register}
@@ -30,23 +30,30 @@ export default function ContactForm() {
         label='Your Name'
         size='small'
         color='primary'
-      ></TextField>
+      />
       {errors.name ? (
-        <Typography>{errors.name.message}</Typography>
+        <Typography variant='body2' className={classes.errorMessage}>
+          {errors.name.message}
+        </Typography>
       ) : (
-        <Box></Box>
+        <Box className={classes.emptyBox}></Box>
       )}
       <TextField
-        className={classes.textField}
         id='email'
         name='email'
         inputRef={register}
         variant='outlined'
         label='Your Email'
         size='small'
-      ></TextField>
+      />
+      {errors.email ? (
+        <Typography variant='body2' className={classes.errorMessage}>
+          {errors.email.message}
+        </Typography>
+      ) : (
+        <Box className={classes.emptyBox}></Box>
+      )}
       <TextField
-        className={classes.textField}
         id='message'
         name='message'
         inputRef={register}
@@ -55,7 +62,14 @@ export default function ContactForm() {
         rows={4}
         label='Write a Message'
         size='small'
-      ></TextField>
+      />
+      {errors.message ? (
+        <Typography variant='body2' className={classes.errorMessage}>
+          {errors.message.message}
+        </Typography>
+      ) : (
+        <Box className={classes.emptyBox}></Box>
+      )}
       <Button
         variant='contained'
         size='large'

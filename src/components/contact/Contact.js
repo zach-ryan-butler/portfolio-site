@@ -1,41 +1,9 @@
 import React from 'react';
 import { Container, Typography, Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 
 import ContactForm from '../contactForm/ContactForm';
 import ContactDetails from '../contactDetails/ContactDetails';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    minHeight: '100vh',
-    backgroundColor: theme.palette.secondaryBackground,
-    border: '3px solid blue',
-    paddingTop: theme.spacing(8),
-    paddingLeft: theme.spacing(1.5),
-    paddingRight: theme.spacing(1.5),
-    [theme.breakpoints.up('lg')]: {
-      paddingLeft: theme.spacing(8),
-      paddingRight: theme.spacing(8),
-    },
-    [theme.breakpoints.up('xl')]: {
-      padding: 0,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-  },
-  gridContainer: {
-    border: '3px solid orange',
-  },
-  headerText: {
-    fontWeight: 100,
-    textAlign: 'center',
-    marginBottom: theme.spacing(6),
-  },
-  subHeaderText: {
-    marginBottom: theme.spacing(4),
-  },
-}));
+import useStyles from './Contact.styles';
 
 export default function Contact() {
   const classes = useStyles();
@@ -46,8 +14,8 @@ export default function Contact() {
       id='section-contact'
       className={classes.root}
     >
-      <Grid container className={classes.gridContainer} direction='column'>
-        <Grid item style={{ border: '3px solid red' }}>
+      <Grid container direction='column'>
+        <Grid item>
           <Typography
             className={classes.headerText}
             variant='h3'
@@ -58,13 +26,7 @@ export default function Contact() {
           </Typography>
         </Grid>
         <Grid item container>
-          <Grid
-            item
-            container
-            xs={12}
-            md={7}
-            style={{ border: '3px solid black' }}
-          >
+          <Grid item container xs={12} md={7}>
             <Grid item xs={12}>
               <Typography
                 className={classes.subHeaderText}
@@ -78,7 +40,7 @@ export default function Contact() {
               <ContactForm />
             </Grid>
           </Grid>
-          <Grid item xs={12} md={5} style={{ border: '3px solid green' }}>
+          <Grid item xs={12} md={5}>
             <ContactDetails />
           </Grid>
         </Grid>

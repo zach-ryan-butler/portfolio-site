@@ -6,6 +6,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: theme.palette.secondaryBackground,
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
     paddingLeft: theme.spacing(1.5),
@@ -21,32 +22,13 @@ const useStyles = makeStyles(theme => ({
       alignItems: 'center',
     },
   },
-  icon: {
-    width: '35px',
-    height: '35px',
+  headerText: {
+    fontWeight: 100,
+    textAlign: 'center',
+    marginBottom: theme.spacing(6),
   },
-  iconButton: {
-    width: '50px',
-    height: '50px',
-  },
-  image: {
-    height: '100%',
-    width: '100%',
-    objectFit: 'contain',
-  },
-  textContainer: {
-    width: '100%',
-    minHeight: '100%',
-    justifyContent: 'space-evenly',
-  },
-  textItem: {
-    [theme.breakpoints.down('sm')]: {
-      paddingTop: theme.spacing(2),
-      paddingBottom: theme.spacing(2),
-    },
-  },
-  textColor: {
-    color: theme.palette.text.secondary,
+  subHeaderText: {
+    marginBottom: theme.spacing(4),
   },
 }));
 
