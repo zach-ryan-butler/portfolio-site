@@ -5,11 +5,18 @@ const nodemailer = require("nodemailer");
 // eslint-disable-next-line new-cap
 module.exports = Router()
     .post("/", (req, res) => {
-      sendEmail(req.body);
+      const obj = JSON.parse(req.body);
+      const {
+        name,
+        email,
+        message,
+      } = obj;
+
+      sendEmail(name, email, message);
       res.status(200).send({isEmailSend: true});
     });
 
-const sendEmail = (entry) => {
+const sendEmail = (name, email, message) => {
   const mailTransport = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -18,16 +25,14 @@ const sendEmail = (entry) => {
     },
   });
 
-  const mailOptions = {
-    from: entry.email,
-    replyTo: entry.email,
+  mailTransport.sendMail({
+    from: email,
+    replyTo: email,
     to: functions.config().gmail.email,
-    subject: entry.name,
-    text: entry.message,
-    html: `<p>${entry.message}</p>`,
-  };
-
-  mailTransport.sendMail(mailOptions, (error, info) => {
+    subject: name,
+    text: message,
+    html: `<p>${message}</p>`,
+  }, (error, info) => {
     if (error) {
       console.log(error);
     } else {

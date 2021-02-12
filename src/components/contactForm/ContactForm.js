@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { contactFormSchema } from './ContactForm.schema';
 
 import useStyles from './ContactForm.styles';
+import { postMessage } from '../../services/messageApi';
 
 export default function ContactForm() {
   const classes = useStyles();
@@ -16,7 +17,7 @@ export default function ContactForm() {
   });
 
   const handleSend = formValues => {
-    console.log(formValues);
+    postMessage(formValues).then(res => console.log(res));
     reset();
   };
 
