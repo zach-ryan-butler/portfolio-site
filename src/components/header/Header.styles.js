@@ -5,13 +5,13 @@ const useStyles = makeStyles(theme => ({
     boxShadow: 'none',
     background: 'transparent',
     color: 'inherit',
-    height: '10%',
+    height: '70px',
     justifyContent: 'center',
   },
   navScrolled: {
     background: theme.palette.background.default,
     color: 'inherit',
-    height: '10%',
+    height: '70px',
     justifyContent: 'center',
   },
 }));
