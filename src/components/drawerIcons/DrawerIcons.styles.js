@@ -6,8 +6,8 @@ const useStyles = makeStyles(theme => ({
     height: '35px',
   },
   iconButton: {
-    width: '50px',
-    height: '50px',
+    width: '60px',
+    height: '60px',
   },
   iconContainer: {
     display: 'flex',
