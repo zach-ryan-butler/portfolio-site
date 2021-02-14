@@ -3,7 +3,7 @@ import { Slide, useScrollTrigger } from '@material-ui/core';
 
 export default function HideOnScroll({ children }) {
   const trigger = useScrollTrigger({
-    threshold: 10,
+    threshold: 200,
   });
 
   return (

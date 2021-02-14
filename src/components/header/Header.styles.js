@@ -7,12 +7,14 @@ const useStyles = makeStyles(theme => ({
     color: 'inherit',
     height: '70px',
     justifyContent: 'center',
+    position: 'absolute',
   },
   navScrolled: {
     background: theme.palette.background.default,
     color: 'inherit',
     height: '70px',
     justifyContent: 'center',
+    position: 'fixed',
   },
 }));
 

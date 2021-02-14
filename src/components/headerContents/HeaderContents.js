@@ -23,7 +23,7 @@ function HeaderContents({ lightOrDark, setLightOrDark, isScreenSizeMedium }) {
           />
         </Toolbar>
       ) : (
-        <Toolbar>
+        <Toolbar style={{ padding: 0 }}>
           <AppDrawer
             setLightOrDark={setLightOrDark}
             lightOrDark={lightOrDark}
