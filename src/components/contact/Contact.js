@@ -1,11 +1,19 @@
 import React from 'react';
 import { Container, Typography, Grid } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 import ContactForm from '../contactForm/ContactForm';
 import ContactDetails from '../contactDetails/ContactDetails';
 import useStyles from './Contact.styles';
+import BackToTopButton from '../backToTopButton/BackToTopButton';
 
 export default function Contact() {
+  const theme = useTheme();
+  const isScreenSizeSmall = useMediaQuery(theme.breakpoints.down('sm'), {
+    noSsr: true,
+  });
+
   const classes = useStyles();
   return (
     <Container
@@ -44,6 +52,13 @@ export default function Contact() {
             <ContactDetails />
           </Grid>
         </Grid>
+        {isScreenSizeSmall ? (
+          <Grid item style={{ display: 'flex', justifyContent: 'center' }}>
+            <BackToTopButton />
+          </Grid>
+        ) : (
+          <></>
+        )}
       </Grid>
     </Container>
   );
