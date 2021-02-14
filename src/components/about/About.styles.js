@@ -25,10 +25,6 @@ const useStyles = makeStyles(theme => ({
     width: '35px',
     height: '35px',
   },
-  iconButton: {
-    width: '60px',
-    height: '60px',
-  },
   image: {
     height: '100%',
     width: '100%',
