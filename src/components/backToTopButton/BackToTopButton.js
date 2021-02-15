@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconButton, Link } from '@material-ui/core';
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { NavHashLink as RouterLink } from 'react-router-hash-link';
 
 import useStyles from './BackToTopButton.styles';
@@ -11,7 +11,7 @@ export default function BackToTopButton() {
   return (
     <Link smooth to='/#section-home' component={RouterLink}>
       <IconButton>
-        <ArrowUpwardIcon className={classes.icon} />
+        <ArrowBackIosIcon className={classes.icon} />
       </IconButton>
     </Link>
   );

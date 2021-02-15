@@ -52,13 +52,7 @@ export default function Contact() {
             <ContactDetails />
           </Grid>
         </Grid>
-        {isScreenSizeSmall ? (
-          <Grid item style={{ display: 'flex', justifyContent: 'center' }}>
-            <BackToTopButton />
-          </Grid>
-        ) : (
-          <></>
-        )}
+        {isScreenSizeSmall ? <BackToTopButton /> : <></>}
       </Grid>
     </Container>
   );
