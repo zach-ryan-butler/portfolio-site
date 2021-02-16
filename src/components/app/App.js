@@ -6,6 +6,7 @@ import {
   responsiveFontSizes,
 } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import Header from '../header/Header';
 import Container from '../container/Container';
@@ -16,6 +17,8 @@ export default function App() {
   const palletType = lightOrDark ? 'light' : 'dark';
   const secondaryBackgroundColor = lightOrDark ? '#f5f5f5' : '#3A3A3A';
   const secondaryPaperColor = lightOrDark ? '#fff' : '#303030';
+
+  smoothscroll.polyfill();
 
   const classes = useStyles();
 
