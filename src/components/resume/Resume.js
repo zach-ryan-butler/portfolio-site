@@ -63,7 +63,7 @@ export default function Resume() {
             </Grid>
             <Grid item xs={12}>
               <ResumeItem
-                date='July 2019 - January 2020'
+                date='April 2020 - September 2020'
                 title='Software Engineering'
                 where='Alchemy Code Lab'
               >

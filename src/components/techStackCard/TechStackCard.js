@@ -21,7 +21,7 @@ export default function TechStackCard() {
               TDD with Jest/Enzyme
             </Typography>
             <Typography className={classes.bodyText}>
-              Remote Pair Programming
+              React testing library
             </Typography>
           </Box>
         </Box>
