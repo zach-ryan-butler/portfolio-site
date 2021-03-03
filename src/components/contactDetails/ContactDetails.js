@@ -19,7 +19,7 @@ export default function ContactDetails() {
           email
         </Typography>
         <Typography variant='body2' className={classes.bodyTwo}>
-          zach.standley93@gmail.com
+          zachbutler.dev@gmail.com
         </Typography>
       </Box>
       <Box>
