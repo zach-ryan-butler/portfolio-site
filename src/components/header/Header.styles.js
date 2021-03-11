@@ -8,6 +8,9 @@ const useStyles = makeStyles(theme => ({
     height: '70px',
     justifyContent: 'center',
     position: 'absolute',
+    [theme.breakpoints.up('xl')]: {
+      height: 90,
+    },
   },
   navScrolled: {
     background: theme.palette.background.default,
@@ -15,6 +18,9 @@ const useStyles = makeStyles(theme => ({
     height: '70px',
     justifyContent: 'center',
     position: 'fixed',
+    [theme.breakpoints.up('xl')]: {
+      height: 90,
+    },
   },
 }));
 

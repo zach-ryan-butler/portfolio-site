@@ -1,14 +1,13 @@
 import React from 'react';
 import { Drawer, List, IconButton } from '@material-ui/core';
 import DehazeIcon from '@material-ui/icons/Dehaze';
-import PropTypes from 'prop-types';
 
 import DrawerLinksList from '../drawerLinksList/DrawerLinksList';
 import DrawerIcons from '../drawerIcons/DrawerIcons';
 import useStyles from './AppDrawer.styles';
 import { useDrawer } from './appDrawerHooks';
 
-function AppDrawer({ setLightOrDark, lightOrDark }) {
+function AppDrawer() {
   const classes = useStyles();
 
   const [open, toggleDrawer] = useDrawer();
@@ -26,10 +25,7 @@ function AppDrawer({ setLightOrDark, lightOrDark }) {
         onClose={toggleDrawer(false)}
         onKeyDown={toggleDrawer(false)}
       >
-        <DrawerIcons
-          lightOrDark={lightOrDark}
-          setLightOrDark={setLightOrDark}
-        />
+        <DrawerIcons />
         <List className={classes.list}>
           <DrawerLinksList />
         </List>
@@ -37,10 +33,5 @@ function AppDrawer({ setLightOrDark, lightOrDark }) {
     </>
   );
 }
-
-AppDrawer.propTypes = {
-  setLightOrDark: PropTypes.func,
-  lightOrDark: PropTypes.bool,
-};
 
 export default AppDrawer;

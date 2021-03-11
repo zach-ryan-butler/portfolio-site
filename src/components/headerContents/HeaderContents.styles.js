@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   linksContainer: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -9,7 +9,10 @@ const useStyles = makeStyles({
   toolbar: {
     height: '100%',
     justifyContent: 'space-between',
+    [theme.breakpoints.down('sm')]: {
+      padding: 0,
+    },
   },
-});
+}));
 
 export default useStyles;

@@ -13,6 +13,13 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.up('xl')]: {
       padding: 0,
+      margin: 0,
+      paddingTop: 64,
+      paddingBottom: 64,
+      paddingLeft: 200,
+      paddingRight: 200,
+      minWidth: '100%',
+      minHeight: '100vh',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',

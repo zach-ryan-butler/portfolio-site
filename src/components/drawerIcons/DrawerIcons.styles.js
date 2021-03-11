@@ -7,7 +7,6 @@ const useStyles = makeStyles(theme => ({
   },
   iconContainer: {
     display: 'flex',
-    justifyContent: 'space-between',
     paddingTop: theme.spacing(1),
   },
 }));
